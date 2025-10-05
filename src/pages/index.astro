@@ -1,296 +1,375 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import TeamCard from '../components/TeamCard.astro';
-import PluginCard from '../components/PluginCard.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import TeamCard from "../components/TeamCard.astro";
+import PluginCard from "../components/PluginCard.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 
 const teamMembers = [
-  { name: "hhitt", role: "Java/Kotlin Developer", image: "/assets/smarts/hhitt.webp" },
-  { name: "jallox", role: "Fullstack Developer", image: "/assets/smarts/jallox.webp" },
-  { name: "Gib", role: "Java/TS Developer", image: "/assets/smarts/gib.webp" },
-  { name: "Slide", role: "Java Developer", image: "/assets/smarts/slide.webp" },
-  { name: "They", role: "Java Developer", image: "/assets/smarts/they.png" },
-  { name: "EpicSpartanRyan", role: "Java/Kotlin Developer", image: "/assets/smarts/ryan.webp" },
-  { name: "alonso.js", role: "Frontend & UX/UI Developer", image: "/assets/smarts/alonso.jpg" }
+    { name: "hhitt", role: "Java/Kotlin Developer", image: "/assets/smarts/hhitt.webp" },
+    { name: "jallox", role: "Fullstack Developer", image: "/assets/smarts/jallox.webp" },
+    { name: "Gib", role: "Java/TS Developer", image: "/assets/smarts/gib.webp" },
+    { name: "Slide", role: "Java Developer", image: "/assets/smarts/slide.webp" },
+    { name: "They", role: "Java Developer", image: "/assets/smarts/they.png" },
+    { name: "EpicSpartanRyan", role: "Java/Kotlin Developer", image: "/assets/smarts/ryan.webp" },
+    { name: "alonso.js", role: "Frontend & UX/UI Developer", image: "/assets/smarts/alonso.jpg" },
 ];
 
 const plugins = [
-  {
-    name: "HubCombat",
-    description: "A simple yet sexy plugin to spice up your lobby with weapons and PvP!",
-    image: "/assets/plugins/hubcombat.webp",
-    features: ["Easy to use", "Free & open source", "Optimized for performance", "Statistics Tracking"],
-    downloadUrl: "https://builtbybit.com/resources/hubcombat-add-pvp-to-your-lobby.65440/"
-  },
-  {
-    name: "NextRTP",
-    description: "Reliable and highly customizable RTP plugin that aims to perform at next level.",
-    image: "/assets/plugins/nextrtp.webp",
-    features: ["Dynamic Particles", "Animated Titles", "Biome Filtering", "Lightweight & Fast"],
-    downloadUrl: "https://builtbybit.com/resources/nextrtp.67544/"
-  },
-  {
-    name: "FancyGlow",
-    description: "The ultimate cosmetic plugin solution!",
-    image: "/assets/plugins/fancyglow.webp",
-    features: ["Lightweight", "Active Development", "Customizable", "Performance Optimized"],
-    downloadUrl: "https://builtbybit.com/resources/fancy-glow.43517/"
-  },
-  {
-    name: "FloatingHeads",
-    description: "Give your server a fresh visual boost with floating decorative heads that captivate players!",
-    image: "/assets/plugins/floatingheads.webp",
-    features: ["Ultimate Customization Power", "Click Protection & Control", "Modern Text Support"],
-    price: "$4.99",
-    purchaseUrl: "https://builtbybit.com/resources/floating-heads-14-effects-npcs.76533/"
-  },
-  {
-    name: "LuckyPillars",
-    description: "The #1 Pillars of Fortune plugin on the market!",
-    image: "/assets/plugins/luckypillars.webp",
-    features: ["Game modifiers", "Multiple game modes", "Advanced match-making", "Tons of placeholders"],
-    price: "$10.99",
-    purchaseUrl: "https://builtbybit.com/resources/lucky-pillars-pillars-of-fortune-game.49289/"
-  },
-  {
-    name: "PS-Menu",
-    description: "Protection Stones addon - Manage protections never was that easy and eye-catching.",
-    image: "/assets/plugins/psaddon.webp",
-    features: ["Manage protections", "Manage WorldGuard Flags", "Edit your protections", "Fully configurable"],
-    price: "$7.49",
-    purchaseUrl: "https://builtbybit.com/resources/ps-menu-make-protections-awesome.79121/"
-  },
-  {
-    name: "Disasters",
-    description: "Give your users a unique experience, inspired by Hypixel's Disasters 2.0 mode",
-    image: "/assets/plugins/disasters.webp",
-    features: ["Flawless storage", "Multiple arenas at once", "10+ unique disasters", "Dynamic scoreboards"],
-    price: "$14.99",
-    purchaseUrl: "https://builtbybit.com/resources/disasters-that-trendy-mini-game.61539/"
-  },
-  {
-    name: "SH-Koth",
-    description: "Simple to use, powerful in action. A smarter KoTH solution.",
-    image: "/assets/plugins/shkoth.webp",
-    features: ["Infinte koths", "Event scheduling", "Many plugins hooks", "Cross-server support"],
-    downloadUrl: "https://builtbybit.com/resources/sh-koth.76419/"
-  },
-  {
-    name: "0xBot",
-    description: "Easy to use, fully customizable and fully modular Discord bot based on Discord.js.",
-    image: "/assets/plugins/0xbot.webp",
-    features: ["A lot addons", "Custom addons support", "Modular architecture", "Easy to use"],
-    downloadUrl: "https://builtbybit.com/resources/0xbot-powerful-multipurpose-bot.76821/"
-  },
-  {
-    name: "Template Website",
-    description: "Free html & tailwind css minecraft server web template with oceanic theme",
-    image: "/assets/plugins/template.webp",
-    features: ["Rules page", "Real time statistics", "Professional staff presentation", "Fully responsive"],
-    downloadUrl: "https://builtbybit.com/resources/oceanic-minecraft-server-web-template.69835/"
-  }
+    {
+        name: "HubCombat",
+        description: "A simple yet sexy plugin to spice up your lobby with weapons and PvP!",
+        image: "/assets/plugins/hubcombat.webp",
+        features: [
+            "Easy to use",
+            "Free & open source",
+            "Optimized for performance",
+            "Statistics Tracking",
+        ],
+        downloadUrl: "https://builtbybit.com/resources/hubcombat-add-pvp-to-your-lobby.65440/",
+    },
+    {
+        name: "NextRTP",
+        description: "Reliable and highly customizable RTP plugin that aims to perform at next level.",
+        image: "/assets/plugins/nextrtp.webp",
+        features: ["Dynamic Particles", "Animated Titles", "Biome Filtering", "Lightweight & Fast"],
+        downloadUrl: "https://builtbybit.com/resources/nextrtp.67544/",
+    },
+    {
+        name: "FancyGlow",
+        description: "The ultimate cosmetic plugin solution!",
+        image: "/assets/plugins/fancyglow.webp",
+        features: ["Lightweight", "Active Development", "Customizable", "Performance Optimized"],
+        downloadUrl: "https://builtbybit.com/resources/fancy-glow.43517/",
+    },
+    {
+        name: "FloatingHeads",
+        description:
+            "Give your server a fresh visual boost with floating decorative heads that captivate players!",
+        image: "/assets/plugins/floatingheads.webp",
+        features: ["Ultimate Customization Power", "Click Protection & Control", "Modern Text Support"],
+        price: "$4.99",
+        purchaseUrl: "https://builtbybit.com/resources/floating-heads-14-effects-npcs.76533/",
+    },
+    {
+        name: "LuckyPillars",
+        description: "The #1 Pillars of Fortune plugin on the market!",
+        image: "/assets/plugins/luckypillars.webp",
+        features: [
+            "Game modifiers",
+            "Multiple game modes",
+            "Advanced match-making",
+            "Tons of placeholders",
+        ],
+        price: "$10.99",
+        purchaseUrl: "https://builtbybit.com/resources/lucky-pillars-pillars-of-fortune-game.49289/",
+    },
+    {
+        name: "PS-Menu",
+        description:
+            "Protection Stones addon - Manage protections never was that easy and eye-catching.",
+        image: "/assets/plugins/psaddon.webp",
+        features: [
+            "Manage protections",
+            "Manage WorldGuard Flags",
+            "Edit your protections",
+            "Fully configurable",
+        ],
+        price: "$7.49",
+        purchaseUrl: "https://builtbybit.com/resources/ps-menu-make-protections-awesome.79121/",
+    },
+    {
+        name: "Disasters",
+        description: "Give your users a unique experience, inspired by Hypixel's Disasters 2.0 mode",
+        image: "/assets/plugins/disasters.webp",
+        features: [
+            "Flawless storage",
+            "Multiple arenas at once",
+            "10+ unique disasters",
+            "Dynamic scoreboards",
+        ],
+        price: "$14.99",
+        purchaseUrl: "https://builtbybit.com/resources/disasters-that-trendy-mini-game.61539/",
+    },
+    {
+        name: "SH-Koth",
+        description: "Simple to use, powerful in action. A smarter KoTH solution.",
+        image: "/assets/plugins/shkoth.webp",
+        features: ["Infinte koths", "Event scheduling", "Many plugins hooks", "Cross-server support"],
+        downloadUrl: "https://builtbybit.com/resources/sh-koth.76419/",
+    },
+    {
+        name: "0xBot",
+        description:
+            "Easy to use, fully customizable and fully modular Discord bot based on Discord.js.",
+        image: "/assets/plugins/0xbot.webp",
+        features: ["A lot addons", "Custom addons support", "Modular architecture", "Easy to use"],
+        downloadUrl: "https://builtbybit.com/resources/0xbot-powerful-multipurpose-bot.76821/",
+    },
+    {
+        name: "Template Website",
+        description: "Free html & tailwind css minecraft server web template with oceanic theme",
+        image: "/assets/plugins/template.webp",
+        features: [
+            "Rules page",
+            "Real time statistics",
+            "Professional staff presentation",
+            "Fully responsive",
+        ],
+        downloadUrl: "https://builtbybit.com/resources/oceanic-minecraft-server-web-template.69835/",
+    },
 ];
 ---
 
 <Layout title="SmartsHub - Professional Minecraft Plugins">
-  <Navbar />
-  
-  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(0,249,163,0.1),transparent_70%)]"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(1,170,249,0.1),transparent_70%)]"></div>
-    
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-primary-mint rounded-full animate-pulse"></div>
-      <div class="absolute top-3/4 right-1/4 w-1 h-1 bg-primary-blue rounded-full animate-pulse delay-1000"></div>
-      <div class="absolute top-1/2 left-3/4 w-1.5 h-1.5 bg-primary-cyan rounded-full animate-pulse delay-500"></div>
-    </div>
-    
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="animate-fade-in">
-        <h1 class="text-6xl md:text-8xl font-bold mb-6">
-          <span class="gradient-text">Smarts</span>
-          <span class="text-white">Hub</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Professional <span class="text-primary-mint font-semibold">Minecraft plugins</span> crafted by expert developers. 
-          Quality, performance, and innovation in every line of code.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="#plugins" class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-2xl bg-primary-mint text-slate-900 hover:bg-primary-emerald transition-all duration-300 shadow-2xl hover:shadow-xl">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-            Explore Plugins
-          </a>
-          <a href="#smarts" class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-2xl border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white transition-all duration-300">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            Meet Our Team
-          </a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-primary-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
-    </div>
-  </section>
+    <Navbar />
 
-  <section id="smarts" class="py-20 bg-slate-900/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          <span class="text-white">Meet the </span><span class="gradient-text">Smarts</span>
-        </h2>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-          Our team of passionate developers dedicated to creating exceptional Minecraft experiences
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {teamMembers.map((member, index) => (
-          <div class="animate-slide-up" style={`animation-delay: ${index * 100}ms`}>
-            <TeamCard 
-              name={member.name} 
-              role={member.role} 
-              image={member.image} 
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="plugins" class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          <span class="text-white">Our </span><span class="gradient-text">Plugins</span>
-        </h2>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-          High-quality Minecraft plugins designed for performance, reliability, and exceptional user experience
-        </p>
-      </div>
-      
-      <div id="plugins-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {plugins.slice(0, 3).map((plugin, index) => (
-          <div class="animate-slide-up" style={`animation-delay: ${index * 100}ms`}>
-            <PluginCard 
-              name={plugin.name}
-              description={plugin.description}
-              image={plugin.image}
-              features={plugin.features}
-              price={plugin.price}
-              downloadUrl={plugin.downloadUrl}
-              purchaseUrl={plugin.purchaseUrl}
-            />
-          </div>
-        ))}
-        
-        <div id="additional-plugins" class="contents hidden">
-          {plugins.slice(3).map((plugin, index) => (
-            <div class="animate-slide-up" style={`animation-delay: ${(index + 3) * 100}ms`}>
-              <PluginCard 
-                name={plugin.name}
-                description={plugin.description}
-                image={plugin.image}
-                features={plugin.features}
-                price={plugin.price}
-                downloadUrl={plugin.downloadUrl}
-                purchaseUrl={plugin.purchaseUrl}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      <div class="text-center mt-12">
-        <button 
-          id="show-more-btn"
-          class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-2xl bg-primary-mint text-slate-900 hover:bg-primary-emerald transition-all duration-300 shadow-lg hover:shadow-xl"
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(0,249,163,0.1),transparent_70%)]"
         >
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-          </svg>
-          <span class="btn-text">Show More</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-      <section id="discord" class="py-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-primary-blue/10 to-primary-azure/10"></div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-          <div class="max-w-4xl mx-auto text-center">
-            <div class="discord-card rounded-3xl p-12 hover-lift">
-              <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 mb-8">
-                <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.445.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                </svg>
-              </div>
-              
-              <h2 class="text-4xl font-bold text-white mb-6">
-                Join Our <span class="gradient-text">Community</span>
-              </h2>
-              <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                Connect with fellow developers, get support, and stay updated with the latest SmartsHub news and releases.
-              </p>
-              
-              <a 
-                href="https://discord.gg/e2duex4hqm"
-                class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl"
-              >
-                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.445.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                </svg>
-                Join Discord Server
-              </a>
-            </div>
-          </div>
         </div>
-      </section>
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(1,170,249,0.1),transparent_70%)]"
+        >
+        </div>
 
-  <Footer />
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-primary-mint rounded-full animate-pulse">
+            </div>
+            <div
+                class="absolute top-3/4 right-1/4 w-1 h-1 bg-primary-blue rounded-full animate-pulse delay-1000"
+            >
+            </div>
+            <div
+                class="absolute top-1/2 left-3/4 w-1.5 h-1.5 bg-primary-cyan rounded-full animate-pulse delay-500"
+            >
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-in">
+                <h1 class="text-6xl md:text-8xl font-bold mb-6">
+                    <span class="gradient-text">Smarts</span>
+                    <span class="text-white">Hub</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Professional <span class="text-primary-mint font-semibold">Minecraft plugins</span> crafted
+                    by expert developers. Quality, performance, and innovation in every line of code.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a
+                        href="#resources"
+                        class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-2xl bg-primary-mint text-slate-900 hover:bg-primary-emerald transition-all duration-300 shadow-2xl hover:shadow-xl"
+                    >
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                            ></path>
+                        </svg>
+                        Explore Resources
+                    </a>
+                    <a
+                        href="#smarts"
+                        class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-2xl border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white transition-all duration-300"
+                    >
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                            ></path>
+                        </svg>
+                        Meet Our Team
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-primary-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="smarts" class="py-20 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="text-white">Meet the </span><span class="gradient-text">Smarts</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Our team of passionate developers dedicated to creating exceptional Minecraft
+                    experiences
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {
+                    teamMembers.map((member, index) => (
+                        <div class="animate-slide-up" style={`animation-delay: ${index * 100}ms`}>
+                            <TeamCard name={member.name} role={member.role} image={member.image} />
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="text-white">Our </span><span class="gradient-text">Plugins</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    High-quality resources designed for performance, reliability, and exceptional user
+                    experience
+                </p>
+            </div>
+
+            <div id="plugins-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {
+                    plugins.slice(0, 3).map((plugin, index) => (
+                        <div class="animate-slide-up" style={`animation-delay: ${index * 100}ms`}>
+                            <PluginCard
+                                name={plugin.name}
+                                description={plugin.description}
+                                image={plugin.image}
+                                features={plugin.features}
+                                price={plugin.price}
+                                downloadUrl={plugin.downloadUrl}
+                                purchaseUrl={plugin.purchaseUrl}
+                            />
+                        </div>
+                    ))
+                }
+
+                <div id="additional-plugins" class="contents hidden">
+                    {
+                        plugins.slice(3).map((plugin, index) => (
+                            <div
+                                class="animate-slide-up"
+                                style={`animation-delay: ${(index + 3) * 100}ms`}
+                            >
+                                <PluginCard
+                                    name={plugin.name}
+                                    description={plugin.description}
+                                    image={plugin.image}
+                                    features={plugin.features}
+                                    price={plugin.price}
+                                    downloadUrl={plugin.downloadUrl}
+                                    purchaseUrl={plugin.purchaseUrl}
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button
+                    id="show-more-btn"
+                    class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-2xl bg-primary-mint text-slate-900 hover:bg-primary-emerald transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    <span class="btn-text">Show More</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="discord" class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-blue/10 to-primary-azure/10"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="discord-card rounded-3xl p-12 hover-lift">
+                    <div
+                        class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 mb-8"
+                    >
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.445.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"
+                            ></path>
+                        </svg>
+                    </div>
+
+                    <h2 class="text-4xl font-bold text-white mb-6">
+                        Join Our <span class="gradient-text">Community</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                        Connect with fellow developers, get support, and stay updated with the latest
+                        SmartsHub news and releases.
+                    </p>
+
+                    <a
+                        href="https://discord.gg/e2duex4hqm"
+                        class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                    >
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.445.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"
+                            ></path>
+                        </svg>
+                        Join Discord Server
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Footer />
 </Layout>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const showMoreBtn = document.getElementById('show-more-btn');
-    const additionalPlugins = document.getElementById('additional-plugins');
-    const btnText = showMoreBtn?.querySelector('.btn-text');
-    let isExpanded = false;
-    
-    showMoreBtn?.addEventListener('click', () => {
-      if (!isExpanded) {
-        additionalPlugins?.classList.remove('hidden');
-        btnText!.textContent = 'Show Less';
-        showMoreBtn.querySelector('svg')?.classList.add('rotate-45');
-        isExpanded = true;
-        
-        setTimeout(() => {
-          additionalPlugins?.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'nearest' 
-          });
-        }, 100);
-      } else {
-        additionalPlugins?.classList.add('hidden');
-        btnText!.textContent = 'Show More';
-        showMoreBtn.querySelector('svg')?.classList.remove('rotate-45');
-        isExpanded = false;
-        
-        showMoreBtn.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'center' 
+    document.addEventListener("DOMContentLoaded", () => {
+        const showMoreBtn = document.getElementById("show-more-btn");
+        const additionalPlugins = document.getElementById("additional-plugins");
+        const btnText = showMoreBtn?.querySelector(".btn-text");
+        let isExpanded = false;
+
+        showMoreBtn?.addEventListener("click", () => {
+            if (!isExpanded) {
+                additionalPlugins?.classList.remove("hidden");
+                btnText!.textContent = "Show Less";
+                showMoreBtn.querySelector("svg")?.classList.add("rotate-45");
+                isExpanded = true;
+
+                setTimeout(() => {
+                    additionalPlugins?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "nearest",
+                    });
+                }, 100);
+            } else {
+                additionalPlugins?.classList.add("hidden");
+                btnText!.textContent = "Show More";
+                showMoreBtn.querySelector("svg")?.classList.remove("rotate-45");
+                isExpanded = false;
+
+                showMoreBtn.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                });
+            }
         });
-      }
     });
-  });
 </script>
