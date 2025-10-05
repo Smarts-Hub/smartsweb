@@ -1,0 +1,32 @@
+---
+export interface Props {
+  name: string;
+  role: string;
+  image: string;
+}
+
+const { name, role, image } = Astro.props;
+---
+
+<div class="glass-card rounded-2xl p-6 hover-lift group cursor-pointer">
+  <div class="flex flex-col items-center text-center">
+    <div class="relative mb-4">
+      <div class="w-20 h-20 rounded-full overflow-hidden ring-2 ring-primary-mint/50 group-hover:ring-primary-blue/70 transition-all duration-300">
+        <img 
+          src={image} 
+          alt={`${name} profile`}
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+        />
+      </div>
+      <div class="absolute inset-0 rounded-full bg-gradient-to-r from-primary-mint to-primary-blue opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-300"></div>
+    </div>
+    
+    <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary-mint transition-colors duration-200">
+      {name}
+    </h3>
+    
+    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-primary-mint/20 to-primary-blue/20 text-primary-mint border border-primary-mint/30 group-hover:from-primary-mint/30 group-hover:to-primary-blue/30 transition-all duration-200">
+      {role}
+    </span>
+  </div>
+</div>
