@@ -41,5 +41,4 @@ This project is licensed under the **GNU Affero General Public License v3.0 (AGP
 You can find the full license text in the [LICENSE](LICENSE) file.
 
 As this is an AGPL license, if this software is run as a network-accessible service (e.g. web app), you must also make available the source code of any modifications you deploy.  
-See the AGPL-3.0 license for full terms.  
->>>>>>> c936b51 (Initial commit)
+See the AGPL-3.0 license for full terms.
