@@ -59,7 +59,7 @@ const isFree = !price;
     </div>
     
     <div class="flex items-center justify-center mt-auto">
-      {isFree && downloadUrl ? (
+      {downloadUrl ? (
         <a 
           href={downloadUrl}
           class="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent text-sm font-semibold rounded-lg bg-primary-mint text-slate-900 hover:bg-primary-emerald transition-all duration-200 shadow-lg hover:shadow-xl"
@@ -67,7 +67,7 @@ const isFree = !price;
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
           </svg>
-          Download Free
+          {isFree ? "Download Free" : "Download"}
         </a>
       ) : purchaseUrl ? (
         <a 
