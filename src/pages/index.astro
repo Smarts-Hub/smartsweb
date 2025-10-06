@@ -16,11 +16,11 @@ const teamMembers = [
     { name: "alonso.js", role: "Frontend & UX/UI Developer", image: "/assets/smarts/alonso.jpg" },
 ];
 
-const plugins = [
+const resources = [
     {
         name: "HubCombat",
         description: "A simple yet sexy plugin to spice up your lobby with weapons and PvP!",
-        image: "/assets/plugins/hubcombat.webp",
+        image: "/assets/resources/hubcombat.webp",
         features: [
             "Easy to use",
             "Free & open source",
@@ -32,14 +32,14 @@ const plugins = [
     {
         name: "NextRTP",
         description: "Reliable and highly customizable RTP plugin that aims to perform at next level.",
-        image: "/assets/plugins/nextrtp.webp",
+        image: "/assets/resources/nextrtp.webp",
         features: ["Dynamic Particles", "Animated Titles", "Biome Filtering", "Lightweight & Fast"],
         downloadUrl: "https://builtbybit.com/resources/nextrtp.67544/",
     },
     {
         name: "FancyGlow",
         description: "The ultimate cosmetic plugin solution!",
-        image: "/assets/plugins/fancyglow.webp",
+        image: "/assets/resources/fancyglow.webp",
         features: ["Lightweight", "Active Development", "Customizable", "Performance Optimized"],
         downloadUrl: "https://builtbybit.com/resources/fancy-glow.43517/",
     },
@@ -47,7 +47,7 @@ const plugins = [
         name: "FloatingHeads",
         description:
             "Give your server a fresh visual boost with floating decorative heads that captivate players!",
-        image: "/assets/plugins/floatingheads.webp",
+        image: "/assets/resources/floatingheads.webp",
         features: ["Ultimate Customization Power", "Click Protection & Control", "Modern Text Support"],
         price: "$4.99",
         purchaseUrl: "https://builtbybit.com/resources/floating-heads-14-effects-npcs.76533/",
@@ -55,7 +55,7 @@ const plugins = [
     {
         name: "LuckyPillars",
         description: "The #1 Pillars of Fortune plugin on the market!",
-        image: "/assets/plugins/luckypillars.webp",
+        image: "/assets/resources/luckypillars.webp",
         features: [
             "Game modifiers",
             "Multiple game modes",
@@ -69,7 +69,7 @@ const plugins = [
         name: "PS-Menu",
         description:
             "Protection Stones addon - Manage protections never was that easy and eye-catching.",
-        image: "/assets/plugins/psaddon.webp",
+        image: "/assets/resources/psaddon.webp",
         features: [
             "Manage protections",
             "Manage WorldGuard Flags",
@@ -82,7 +82,7 @@ const plugins = [
     {
         name: "Disasters",
         description: "Give your users a unique experience, inspired by Hypixel's Disasters 2.0 mode",
-        image: "/assets/plugins/disasters.webp",
+        image: "/assets/resources/disasters.webp",
         features: [
             "Flawless storage",
             "Multiple arenas at once",
@@ -95,7 +95,7 @@ const plugins = [
     {
         name: "SH-Koth",
         description: "Simple to use, powerful in action. A smarter KoTH solution.",
-        image: "/assets/plugins/shkoth.webp",
+        image: "/assets/resources/shkoth.webp",
         features: ["Infinte koths", "Event scheduling", "Many plugins hooks", "Cross-server support"],
         downloadUrl: "https://builtbybit.com/resources/sh-koth.76419/",
     },
@@ -103,14 +103,14 @@ const plugins = [
         name: "0xBot",
         description:
             "Easy to use, fully customizable and fully modular Discord bot based on Discord.js.",
-        image: "/assets/plugins/0xbot.webp",
+        image: "/assets/resources/0xbot.webp",
         features: ["A lot addons", "Custom addons support", "Modular architecture", "Easy to use"],
         downloadUrl: "https://builtbybit.com/resources/0xbot-powerful-multipurpose-bot.76821/",
     },
     {
         name: "Template Website",
         description: "Free html & tailwind css minecraft server web template with oceanic theme",
-        image: "/assets/plugins/template.webp",
+        image: "/assets/resources/template.webp",
         features: [
             "Rules page",
             "Real time statistics",
@@ -156,7 +156,7 @@ const plugins = [
                     <span class="text-white">Hub</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                    Professional <span class="text-primary-mint font-semibold">Minecraft plugins</span> crafted
+                    Professional <span class="text-primary-mint font-semibold">Minecraft resources</span> crafted
                     by expert developers. Quality, performance, and innovation in every line of code.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -230,54 +230,45 @@ const plugins = [
     <section id="resources" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    <span class="text-white">Our </span><span class="gradient-text">Plugins</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    High-quality resources designed for performance, reliability, and exceptional user
-                    experience
-                </p>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          <span class="text-white">Our </span><span class="gradient-text">Resources</span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          High-quality Minecraft resources designed for performance, reliability, and exceptional user experience
+        </p>
             </div>
 
-            <div id="plugins-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {
-                    plugins.slice(0, 3).map((plugin, index) => (
-                        <div class="animate-slide-up" style={`animation-delay: ${index * 100}ms`}>
-                            <PluginCard
-                                name={plugin.name}
-                                description={plugin.description}
-                                image={plugin.image}
-                                features={plugin.features}
-                                price={plugin.price}
-                                downloadUrl={plugin.downloadUrl}
-                                purchaseUrl={plugin.purchaseUrl}
+            <div id="resources-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {resources.slice(0, 3).map((resource, index) => (
+                    <div class="animate-slide-up" style={`animation-delay: ${index * 100}ms`}>
+                        <PluginCard 
+                            name={resource.name}
+                            description={resource.description}
+                            image={resource.image}
+                            features={resource.features}
+                            price={resource.price}
+                            purchaseUrl={resource.purchaseUrl}
+                        />
+                    </div>
+                ))}
+                
+                <div id="additional-resources" class="contents hidden">
+                    {resources.slice(3).map((resource, index) => (
+                        <div class="animate-slide-up" style={`animation-delay: ${(index + 3) * 100}ms`}>
+                            <PluginCard 
+                                name={resource.name}
+                                description={resource.description}
+                                image={resource.image}
+                                features={resource.features}
+                                price={resource.price}
+                                downloadUrl={resource.downloadUrl}
+                                purchaseUrl={resource.purchaseUrl}
                             />
                         </div>
-                    ))
-                }
-
-                <div id="additional-plugins" class="contents hidden">
-                    {
-                        plugins.slice(3).map((plugin, index) => (
-                            <div
-                                class="animate-slide-up"
-                                style={`animation-delay: ${(index + 3) * 100}ms`}
-                            >
-                                <PluginCard
-                                    name={plugin.name}
-                                    description={plugin.description}
-                                    image={plugin.image}
-                                    features={plugin.features}
-                                    price={plugin.price}
-                                    downloadUrl={plugin.downloadUrl}
-                                    purchaseUrl={plugin.purchaseUrl}
-                                />
-                            </div>
-                        ))
-                    }
+                    ))}
                 </div>
             </div>
-
+            
             <div class="text-center mt-12">
                 <button
                     id="show-more-btn"
@@ -342,25 +333,25 @@ const plugins = [
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const showMoreBtn = document.getElementById("show-more-btn");
-        const additionalPlugins = document.getElementById("additional-plugins");
+        const additionalResources = document.getElementById("additional-resources");
         const btnText = showMoreBtn?.querySelector(".btn-text");
         let isExpanded = false;
 
         showMoreBtn?.addEventListener("click", () => {
             if (!isExpanded) {
-                additionalPlugins?.classList.remove("hidden");
+                additionalResources?.classList.remove("hidden");
                 btnText!.textContent = "Show Less";
                 showMoreBtn.querySelector("svg")?.classList.add("rotate-45");
                 isExpanded = true;
 
                 setTimeout(() => {
-                    additionalPlugins?.scrollIntoView({
+                    additionalResources?.scrollIntoView({
                         behavior: "smooth",
                         block: "nearest",
                     });
                 }, 100);
             } else {
-                additionalPlugins?.classList.add("hidden");
+                additionalResources?.classList.add("hidden");
                 btnText!.textContent = "Show More";
                 showMoreBtn.querySelector("svg")?.classList.remove("rotate-45");
                 isExpanded = false;
