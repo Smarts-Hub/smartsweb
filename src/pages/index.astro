@@ -7,13 +7,13 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
 const teamMembers = [
-    { name: "hhitt", role: "Java/Kotlin Developer", image: "/assets/smarts/hhitt.webp" },
-    { name: "jallox", role: "Fullstack Developer", image: "/assets/smarts/jallox.webp" },
-    { name: "Gib", role: "Java/TS Developer", image: "/assets/smarts/gib.webp" },
-    { name: "Slide", role: "Java Developer", image: "/assets/smarts/slide.webp" },
-    { name: "They", role: "Java Developer", image: "/assets/smarts/they.png" },
-    { name: "EpicSpartanRyan", role: "Java/Kotlin Developer", image: "/assets/smarts/ryan.webp" },
-    { name: "alonso.js", role: "Frontend & UX/UI Developer", image: "/assets/smarts/alonso.jpg" },
+    { name: "hhitt", role: "Java/Kotlin Developer", image: "/assets/smarts/hhitt.webp", githubUrl: "https://github.com/Imhhitt" },
+    { name: "jallox", role: "Fullstack Developer", image: "/assets/smarts/jallox.webp", githubUrl: "https://github.com/jallox" },
+    { name: "Gib", role: "Java/TS Developer", image: "/assets/smarts/gib.webp", githubUrl: "https://github.com/Kryz-s" },
+    { name: "Slide", role: "Java Developer", image: "/assets/smarts/slide.webp", githubUrl: "https://github.com/yiyoperez" },
+    { name: "They", role: "Java Developer", image: "/assets/smarts/they.png", githubUrl: "https://github.com/ImTheyyyyy" },
+    { name: "EpicSpartanRyan", role: "Java/Kotlin Developer", image: "/assets/smarts/ryan.webp", githubUrl: "https://github.com/BryanValc" },
+    { name: "alonso.js", role: "Frontend & UX/UI Developer", image: "/assets/smarts/alonso.jpg", githubUrl: "https://github.com/alonsopo" },
 ];
 
 const resources = [
@@ -214,7 +214,7 @@ const resources = [
                 {
                     teamMembers.map((member, index) => (
                         <div class="animate-slide-up" style={`animation-delay: ${index * 100}ms`}>
-                            <TeamCard name={member.name} role={member.role} image={member.image} />
+                            <TeamCard name={member.name} role={member.role} image={member.image} githubUrl={member.githubUrl} />
                         </div>
                     ))
                 }
