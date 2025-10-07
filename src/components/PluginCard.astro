@@ -24,7 +24,6 @@ const isFree = !price;
     />
     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
     
-    {/* Badge de descuento - Esquina inferior izquierda */}
     {discount && (
       <div class="absolute bottom-4 left-4 z-10">
         <span class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-bold bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg backdrop-blur-sm border-2 border-white/60">
@@ -36,7 +35,6 @@ const isFree = !price;
       </div>
     )}
     
-    {/* Precio - Esquina inferior derecha con diseño moderno */}
     <div class="absolute bottom-4 right-4">
       {isFree ? (
         <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-mint text-slate-900 shadow-lg">
